@@ -206,4 +206,19 @@ class Firebird2Grammar extends Grammar
 
         return $where;
     }
+
+     /**
+     * Compile an insert and get ID statement into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array   $values
+     * @param  string  $sequence
+     * @return string
+     */
+    public function compileInsertGetId(Builder $query, $values, $sequence)
+    {
+        $sequence = $sequence ?: 'ID';
+        
+        return $this->compileInsert($query, $values).' RETURNING '.$sequence;
+    }
 }

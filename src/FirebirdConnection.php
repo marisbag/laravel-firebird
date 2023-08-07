@@ -3,6 +3,7 @@
 namespace Firebird;
 
 use Exception;
+use Firebird\Schema\Processors\FirebirdProcessor;
 use Firebird\Query\Builder as FirebirdQueryBuilder;
 use Firebird\Query\Grammars\Firebird1Grammar as Firebird1QueryGrammar;
 use Firebird\Query\Grammars\Firebird2Grammar as Firebird2QueryGrammar;
@@ -13,6 +14,17 @@ use Illuminate\Database\Connection as DatabaseConnection;
 
 class FirebirdConnection extends DatabaseConnection
 {
+
+        /**
+     * Get the default post processor instance.
+     *
+     * @return \Firebird\Schema\Processors\FirebirdProcessor
+     */
+    protected function getDefaultPostProcessor()
+    {
+        return new FirebirdProcessor;
+    }
+
     /**
      * Get the default query grammar instance.
      *
