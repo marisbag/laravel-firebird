@@ -3,19 +3,19 @@
 namespace Firebird;
 
 use Exception;
-use Firebird\Schema\Processors\FirebirdProcessor;
 use Firebird\Query\Builder as FirebirdQueryBuilder;
 use Firebird\Query\Grammars\Firebird1Grammar as Firebird1QueryGrammar;
 use Firebird\Query\Grammars\Firebird2Grammar as Firebird2QueryGrammar;
 use Firebird\Schema\Builder as FirebirdSchemaBuilder;
 use Firebird\Schema\Grammars\FirebirdGrammar as FirebirdSchemaGrammar;
+use Firebird\Schema\Processors\FirebirdProcessor;
 use Firebird\Support\Version;
 use Illuminate\Database\Connection as DatabaseConnection;
 
 class FirebirdConnection extends DatabaseConnection
 {
 
-        /**
+    /**
      * Get the default post processor instance.
      *
      * @return \Firebird\Schema\Processors\FirebirdProcessor
