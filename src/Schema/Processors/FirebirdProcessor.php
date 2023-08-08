@@ -3,9 +3,9 @@ namespace Firebird\Schema\Processors;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Query\Processors\Processor;
-class FirebirdProcessor extends Processor {
-
- /**
+class FirebirdProcessor extends Processor 
+{
+    /**
      * Process an "insert get ID" query.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -24,5 +24,4 @@ class FirebirdProcessor extends Processor {
 
         return is_numeric($id) ? (int) $id : $id;
     }
-
 }

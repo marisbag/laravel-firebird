@@ -14,7 +14,6 @@ use Illuminate\Database\Connection as DatabaseConnection;
 
 class FirebirdConnection extends DatabaseConnection
 {
-
     /**
      * Get the default post processor instance.
      *
@@ -79,8 +78,8 @@ class FirebirdConnection extends DatabaseConnection
     /**
      * Execute a stored procedure.
      *
-     * @param string $procedure
-     * @param array $values
+     * @param  string  $procedure
+     * @param  array  $values
      *
      * @return \Illuminate\Support\Collection
      */

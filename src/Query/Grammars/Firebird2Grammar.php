@@ -43,9 +43,9 @@ class Firebird2Grammar extends Grammar
     /**
      * Compile SQL statement for get context variable value.
      *
-     * @param \Illuminate\Database\Query\Builder  $query
-     * @param string $namespace
-     * @param string $name
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  string  $namespace
+     * @param  string  $name
      * @return string
      */
     public function compileGetContext(Builder $query, $namespace, $name)
@@ -56,9 +56,9 @@ class Firebird2Grammar extends Grammar
     /**
      * Compile SQL statement for a stored procedure.
      *
-     * @param \Illuminate\Database\Query\Builder  $query
-     * @param string $procedure
-     * @param array $values
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  string  $procedure
+     * @param  array  $values
      * @return string
      */
     public function compileProcedure(Builder $query, $procedure, array $values = null)
@@ -171,9 +171,9 @@ class Firebird2Grammar extends Grammar
     /**
      * Compile a sliced where in query.
      *
-     * @param \Illuminate\Database\Query\Builder $query
-     * @param array $where
-     * @param int $limit
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array  $where
+     * @param  int  $limit
      * @return string
      */
     private function slicedWhereIn(Builder $query, $where, $limit)
@@ -195,9 +195,9 @@ class Firebird2Grammar extends Grammar
     /**
      * Slices the values portion of a $where array.
      *
-     * @param array $where
-     * @param int $offset
-     * @param int $length
+     * @param  array  $where
+     * @param  int  $offset
+     * @param  int  $length
      * @return array
      */
     private function sliceWhereValues($where, $offset, $length)
@@ -207,7 +207,7 @@ class Firebird2Grammar extends Grammar
         return $where;
     }
 
-     /**
+    /**
      * Compile an insert and get ID statement into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -218,7 +218,7 @@ class Firebird2Grammar extends Grammar
     public function compileInsertGetId(Builder $query, $values, $sequence)
     {
         $sequence = $sequence ?: 'ID';
-        
+
         return $this->compileInsert($query, $values).' RETURNING '.$sequence;
     }
 }
