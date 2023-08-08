@@ -4,7 +4,7 @@ namespace Firebird\Schema\Processors;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Query\Processors\Processor;
 
-class FirebirdProcessor extends Processor 
+class FirebirdProcessor extends Processor
 {
     /**
      * Process an "insert get ID" query.
