@@ -169,4 +169,18 @@ class FirebirdGrammar extends Grammar
             'as aggregate', 'as "aggregate"', parent::compileAggregate($query, $aggregate)
         );
     }
+    /**
+    * Compile an insert and get ID statement into SQL.
+    *
+    * @param  \Illuminate\Database\Query\Builder  $query
+    * @param  array   $values
+    * @param  string  $sequence
+    * @return string
+    */
+    public function compileInsertGetId(Builder $query, $values, $sequence)
+    {
+        $sequence = $sequence ?: 'ID';
+        
+        return $this->compileInsert($query, $values).' RETURNING '.$sequence;
+    }
 }
